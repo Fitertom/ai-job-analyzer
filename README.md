@@ -6,10 +6,6 @@
 
 https://github.com/user-attachments/assets/fb18fa00-37ca-467e-b15d-2d0252de2eb2
 
-
-[link YT](https://youtu.be/aek6_5zVQ_E)
----
-
 ## ✨ Features
 
 ### Tab 1 — Search Listings Analysis
@@ -36,15 +32,6 @@ https://github.com/user-attachments/assets/fb18fa00-37ca-467e-b15d-2d0252de2eb2
 - **API Key** — Your Gemini API key
 - **Resume** — Paste your resume text for AI analysis
 - **System Prompt** — Customize the AI's behavior and instructions
-
----
-
-## 📸 Screenshots
-
-<!-- Add your screenshots here -->
-<!-- ![Search Analysis](screenshots/tab1.png) -->
-<!-- ![Vacancy Review](screenshots/tab2.png) -->
-<!-- ![Badges on Indeed](screenshots/badges.png) -->
 
 ---
 
@@ -122,6 +109,7 @@ MIT — feel free to use, modify, and distribute.
 ## 🤝 Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
 
 
 

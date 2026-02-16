@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JP Complex</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <!-- ─── Top bar ─── -->
+  <header class="topbar">
+    <h1 class="logo">JP Complex</h1>
+    <div class="topbar-right">
+      <label class="toggle" title="Использовать API">
+        <input type="checkbox" id="apiToggle" />
+        <span class="toggle-slider"></span>
+        <span class="toggle-label">API</span>
+      </label>
+      <button id="settingsBtn" class="icon-btn" title="Настройки">⚙</button>
+    </div>
+  </header>
+
+  <!-- ─── Settings modal ─── -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <h2>Настройки</h2>
+      <label class="field-label">API ключ</label>
+      <input type="text" id="apiKeyInput" class="field" placeholder="sk-..." />
+      <label class="field-label">Резюме</label>
+      <textarea id="resumeInput" class="field textarea" rows="6" placeholder="Вставьте текст резюме..."></textarea>
+      <label class="field-label">Системный промпт (предварительный)</label>
+      <textarea id="systemPromptInput" class="field textarea" rows="4"
+        placeholder="Ты — опытный IT-рекрутер в Германии..."></textarea>
+      <div class="modal-actions">
+        <button id="settingsSave" class="btn primary">Сохранить</button>
+        <button id="settingsCancel" class="btn ghost">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Tabs ─── -->
+  <nav class="tabs">
+    <button class="tab active" data-tab="tab1">📋 Анкеты</button>
+    <button class="tab" data-tab="tab2">📄 Вакансия</button>
+    <button class="tab" data-tab="tab3" id="tab3btn">📊 Сборщик</button>
+  </nav>
+
+  <!-- ─── Tab 1: Parse search listings ─── -->
+  <section id="tab1" class="panel active">
+    <p class="hint" id="tab1HintCopy">Откройте страницу поиска Indeed и нажмите кнопку для копирования списка вакансий.
+    </p>
+    <p class="hint hidden" id="tab1HintApi">Откройте страницу поиска Indeed. AI рассчитает шанс на собеседование по
+      вашему резюме.</p>
+    <button id="copyListBtn" class="btn primary full">Скопировать вакансии</button>
+    <p id="tab1Status" class="status" role="status"></p>
+    <div id="aiResponseWrap" class="debug-output hidden">
+      <div class="debug-header">
+        <span>Ответ AI</span>
+        <button id="copyAiResponse" class="btn ghost btn-sm" title="Скопировать">📋</button>
+      </div>
+      <pre id="aiResponseText" class="debug-text"></pre>
+    </div>
+    <details class="format-info" id="tab1Format">
+      <summary>Формат</summary>
+      <pre>Title | Company | Location | Attributes | Link</pre>
+    </details>
+  </section>
+
+  <!-- ─── Tab 2: Parse single vacancy ─── -->
+  <section id="tab2" class="panel">
+    <p id="tab2HintCopy" class="hint">Откройте конкретную вакансию на Indeed и нажмите для извлечения информации.</p>
+    <p id="tab2HintApi" class="hint hidden">Откройте вакансию на Indeed — AI сделает подробный обзор и рекомендацию.</p>
+    <button id="copyVacancyBtn" class="btn primary full">Скопировать инфо</button>
+    <p id="tab2Status" class="status" role="status"></p>
+    <div id="aiVacancyWrap" class="debug-output hidden">
+      <div class="debug-header">
+        <span>Обзор AI</span>
+        <button id="copyAiVacancy" class="btn ghost btn-sm" title="Скопировать">📋</button>
+      </div>
+      <pre id="aiVacancyText" class="debug-text"></pre>
+    </div>
+  </section>
+
+  <!-- ─── Tab 3: Probability collector (only without API) ─── -->
+  <section id="tab3" class="panel">
+    <div class="collector-header">
+      <span class="hint">Собирает таблицы из Gemini при прокрутке.</span>
+      <span id="probCount" class="badge">0</span>
+    </div>
+    <div class="actions-grid">
+      <button id="toggleAnalysis" class="btn accent">Включить</button>
+      <button id="pickBtn" class="btn accent">Пипетка</button>
+      <button id="refreshBtn" class="btn accent">Обновить</button>
+      <button id="saveHtmlBtn" class="btn accent">HTML</button>
+      <button id="saveJsonBtn" class="btn accent">JSON</button>
+      <button id="clearBtn" class="btn danger">Очистить</button>
+    </div>
+    <div id="tableWrap" class="table-wrap"></div>
+    <p id="tab3Status" class="status" role="status"></p>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "JP Complex",
+  "version": "1.0.0",
+  "description": "Combined job parser: search listings, vacancy details, Gemini table collector.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "tabs",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_title": "JP Complex",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_indeed_list.js",
+        "content_vacancy.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "js": [
+        "content_probability.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

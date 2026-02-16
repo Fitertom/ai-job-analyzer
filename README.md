@@ -4,11 +4,9 @@
 
 ## 🎥 Demo
 
-<!-- Replace the link below with your video URL (YouTube, Loom, etc.) -->
-[![Watch Demo](https://img.shields.io/badge/▶_Watch_Demo-Video-red?style=for-the-badge)](YOUR_VIDEO_LINK_HERE)
+https://github.com/user-attachments/assets/fb18fa00-37ca-467e-b15d-2d0252de2eb2
 
-<!-- Or embed directly: -->
-<!-- https://github.com/user-attachments/assets/YOUR_VIDEO_ID -->
+
 
 ---
 
@@ -124,3 +122,4 @@ MIT — feel free to use, modify, and distribute.
 ## 🤝 Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+

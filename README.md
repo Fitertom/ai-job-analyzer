@@ -7,7 +7,7 @@
 https://github.com/user-attachments/assets/fb18fa00-37ca-467e-b15d-2d0252de2eb2
 
 
-https://youtu.be/Q2MYmYgVR8s
+[link YT](https://youtu.be/aek6_5zVQ_E)
 ---
 
 ## ✨ Features
@@ -122,5 +122,6 @@ MIT — feel free to use, modify, and distribute.
 ## 🤝 Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
 
 
